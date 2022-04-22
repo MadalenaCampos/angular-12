@@ -7,7 +7,7 @@ import { TarefaRoutes } from './tarefas';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tarefa/listar',
+    redirectTo: 'tarefas/listar',
     pathMatch: 'full',
   },
   ...TarefaRoutes, // Adiciona as rotas existentes no módulo de tarefas

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 // Components e módulos
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill];
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     TarefasModule,
     NzIconModule,
     NzIconModule.forRoot(icons),
