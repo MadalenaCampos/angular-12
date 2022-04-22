@@ -1,0 +1,82 @@
+<div class="cadastrar-tarefa">
+  <div class="header">
+    <div class="titulo">
+      <i nz-icon nzType="edit" nzTheme="outline" class="editar"></i>
+      <h1>Editar tarefa</h1>
+    </div>
+  </div>
+
+  <nz-divider></nz-divider>
+
+  <form class="form" #formTarefa="ngForm" autocomplete="off">
+    <div class="nome">
+      <label form="nome">Nome <span style="color: brown">*</span></label>
+      <input
+        nz-input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Informe o nome da tarefa"
+        [(ngModel)]="tarefa.nome"
+        #nome="ngModel"
+        minlength="5"
+        required
+      />
+      <div class="aviso" *ngIf="nome.errors && (nome.dirty || nome.touched)">
+        <nz-alert
+          [hidden]="!nome.errors['required']"
+          nzShowIcon
+          nzType="error"
+          nzMessage="Digite o nome da tarefa!"
+        ></nz-alert>
+        <nz-alert
+          [hidden]="!nome.errors['minlength']"
+          nzShowIcon
+          nzType="error"
+          nzMessage="O nome deve conter pelo menos 5 caracteres!"
+        ></nz-alert>
+      </div>
+    </div>
+
+    <div class="descricao">
+      <label form="descricao"
+        >Descrição <span style="color: brown">*</span></label
+      >
+      <textarea
+        nz-input
+        id="descricao"
+        name="descricao"
+        placeholder="Descreva a tarefa"
+        [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+        [(ngModel)]="tarefa.descricao"
+        #descricao="ngModel"
+        maxlength="80"
+        required
+      ></textarea>
+    </div>
+
+    <p class="campos-obrigatorios">
+      <span style="color: brown; font-size: 1rem">*</span> Campos obrigatórios
+    </p>
+  </form>
+
+  <div class="footer">
+    <div class="voltar">
+      <button nz-button [routerLink]="['/tarefas']">
+        <i nz-icon nzType="left" nzTheme="outline"></i>Voltar
+      </button>
+    </div>
+    <div class="cadastrar">
+      <button
+        nz-button
+        type="submit"
+        nzType="primary"
+        (click)="atualizar()"
+        [disabled]="!formTarefa.form.valid"
+        [nzLoading]="loading"
+      >
+        Salvar
+      </button>
+    </div>
+  </div>
+</div>

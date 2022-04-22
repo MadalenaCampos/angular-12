@@ -10,6 +10,7 @@ import { TarefaService } from './shared';
 // Componentes do CRUD de tarefas
 import { ListarTarefaComponent } from './listar';
 import { CadastrarTarefaComponent } from './cadastrar';
+import { EditarTarefaComponent } from './editar/editar-tarefa.component';
 
 // Modulos do NG-ZORRO
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -23,7 +24,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 @NgModule({
-  declarations: [ListarTarefaComponent, CadastrarTarefaComponent],
+  declarations: [ListarTarefaComponent, CadastrarTarefaComponent, EditarTarefaComponent],
   imports: [
     CommonModule,
     RouterModule,
