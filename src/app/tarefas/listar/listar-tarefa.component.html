@@ -1,0 +1,36 @@
+<div class="lista-tarefas">
+  <div class="header">
+    <div class="titulo">
+      <i nz-icon nzType="bars" nzTheme="outline"></i>
+      <h1>Lista de tarefas</h1>
+    </div>
+    <div class="nova-tarefa">
+      <i nz-icon nzType="plus-circle" nzTheme="fill"></i>
+      <p>Nova tarefa</p>
+    </div>
+  </div>
+  <div class="tarefas" *ngFor="let tarefa of tarefas">
+    <nz-divider></nz-divider>
+    <div class="tarefa">
+      <div class="check">
+        <label
+          nz-checkbox
+          [nzValue]="tarefa.id"
+          [ngModel]="tarefa.concluida"
+        ></label>
+      </div>
+      <div class="nome-descricao">
+        <h1>{{ tarefa.nome }}</h1>
+        <p>{{ tarefa.descricao }}</p>
+      </div>
+      <div class="acoes">
+        <i nz-icon nzType="edit" nzTheme="outline" class="editar"></i>
+        <i nz-icon nzType="delete" nzTheme="outline" class="excluir"></i>
+      </div>
+    </div>
+  </div>
+  <div class="sem-tarefas" *ngIf="tarefas.length == 0">
+    <nz-empty [nzNotFoundContent]="null"></nz-empty>
+    <p>É isto... você não possui nenhuma tarefa!</p>
+  </div>
+</div>

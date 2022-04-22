@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+// Arquivo de rotas do módulo de tarefas
+import { TarefaRoutes } from './tarefas';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'tarefa/listar',
+    pathMatch: 'full',
+  },
+  ...TarefaRoutes, // Adiciona as rotas existentes no módulo de tarefas
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
