@@ -22,9 +22,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 @NgModule({
-  declarations: [ListarTarefaComponent, CadastrarTarefaComponent, EditarTarefaComponent],
+  declarations: [
+    ListarTarefaComponent,
+    CadastrarTarefaComponent,
+    EditarTarefaComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -39,6 +44,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     NzMessageModule,
     NzInputModule,
     NzAlertModule,
+    NzPopconfirmModule,
   ],
   providers: [TarefaService],
 })

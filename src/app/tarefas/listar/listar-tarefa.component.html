@@ -32,7 +32,18 @@
           [routerLink]="['/tarefas/editar', tarefa.id]"
         ></i>
         <!-- [routerLink]="['/tarefas/editar', tarefa.id]" => com o uso da ", tarefa.id" eu substituo o :id, que é um parâmetro da rota, pelo id da row da minha tabela que é o tarefa.id -->
-        <i nz-icon nzType="delete" nzTheme="outline" class="excluir"></i>
+        <i
+          nz-icon
+          nz-popconfirm
+          nzPopconfirmTitle="Tem certeza que deseja excluir essa tarefa?"
+          (nzOnConfirm)="remover($event, tarefa)"
+          [nzOkText]="'Sim'"
+          [nzCancelText]="'Cancelar'"
+          nzPopconfirmPlacement="top"
+          nzType="delete"
+          nzTheme="outline"
+          class="excluir"
+        ></i>
       </div>
     </div>
   </div>
