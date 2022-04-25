@@ -15,8 +15,8 @@
       <div class="check">
         <label
           nz-checkbox
-          [nzValue]="tarefa.id"
           [ngModel]="tarefa.concluida"
+          (ngModelChange)="alterarStatus(tarefa)"
         ></label>
       </div>
       <div class="nome-descricao">

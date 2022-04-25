@@ -23,7 +23,15 @@ export class ListarTarefaComponent implements OnInit {
     return this.tarefaService.listarTodos();
   }
 
+  public alterarStatus(tarefa: Tarefa): void {
+    this.tarefaService.alterarStatus(tarefa.id);
+    this.tarefas = this.tarefaService.listarTodos();
+  }
+
+  // É importante ressaltar que essa função é chamada através do botão no pop up de confirmação de exclusão.
   public remover($event: any, tarefa: Tarefa): void {
+    // Eu recebo o evento e o tarefa que foi clicada.
+    // $event => objeto padrão que representa um evento do navegador.
     this.tarefaService.remover(tarefa.id);
     this.tarefas = this.tarefaService.listarTodos();
     this.nzMessageService.success('Tarefa removida com sucesso!');
