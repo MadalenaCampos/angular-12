@@ -29,20 +29,12 @@ export class EditarTarefaComponent implements OnInit {
 
   public atualizar() {
     this.loading = true;
-    setTimeout(() => {
-      if (this.formTarefa.form.valid) {
-        this.loading = false;
-        this.tarefaService.atualizar(this.tarefa);
-        this.exibirMensagem('success', 'Tarefa atualizada com sucesso!');
-        this.router.navigate(['/tarefas']);
-      } else {
-        this.loading = false;
-        this.exibirMensagem(
-          'error',
-          'Preencha todos os campos obrigatórios, corretamente!'
-        );
-      }
-    }, 2000);
+    if (this.formTarefa.form.valid) {
+      this.loading = false;
+      this.tarefaService.atualizar(this.tarefa);
+      this.exibirMensagem('success', 'Tarefa atualizada com sucesso!');
+      this.router.navigate(['/tarefas']);
+    }
   }
 
   ngOnInit(): void {

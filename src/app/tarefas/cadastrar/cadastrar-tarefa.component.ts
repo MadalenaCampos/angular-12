@@ -19,30 +19,20 @@ export class CadastrarTarefaComponent implements OnInit {
   // Atributo que representa a tarefa, deixando-a preparada para ser cadastrada.
   public tarefa!: Tarefa;
 
-  // Método responsável por criar uma mensagem de sucesso ou até mesmo erro.
-  public exibirMensagem(tipo: string, mensagem?: string): void {
-    this.message.create(tipo, mensagem);
-  }
-
   constructor(
     private router: Router,
     private tarefaService: TarefaService,
-    private message: NzMessageService
+    private nzMessageService: NzMessageService
   ) {}
 
   public cadastrar() {
     this.loading = true;
-    setTimeout(() => {
-      if (this.formTarefa.form.valid) {
-        this.loading = false;
-        this.tarefaService.cadastrar(this.tarefa);
-        this.exibirMensagem('success', 'Tarefa cadastrada com sucesso!');
-        this.router.navigate(['/tarefas']);
-      } else {
-        this.loading = false;
-        this.exibirMensagem('error', 'Preencha todos os campos obrigatórios, corretamente!');
-      }
-    }, 3000);
+    if (this.formTarefa.form.valid) {
+      this.loading = false;
+      this.tarefaService.cadastrar(this.tarefa);
+      this.nzMessageService.success('Tarefa cadastrada com sucesso!');
+      this.router.navigate(['/tarefas']);
+    }
   }
 
   ngOnInit(): void {
