@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Service do CRUD de tarefas
-import { TarefaService } from './shared';
+import { TarefaService, TarefaConcluidaDirective } from './shared';
 
 // Componentes do CRUD de tarefas
 import { ListarTarefaComponent } from './listar';
@@ -29,6 +29,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     ListarTarefaComponent,
     CadastrarTarefaComponent,
     EditarTarefaComponent,
+    TarefaConcluidaDirective,
   ],
   imports: [
     CommonModule,

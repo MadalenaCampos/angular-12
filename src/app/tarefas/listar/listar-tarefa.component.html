@@ -20,7 +20,7 @@
         ></label>
       </div>
       <div class="nome-descricao">
-        <h1>{{ tarefa.nome }}</h1>
+        <h1 [tarefaConcluida]="tarefa.concluida">{{ tarefa.nome }}</h1>
         <p>{{ tarefa.descricao }}</p>
       </div>
       <div class="acoes">
