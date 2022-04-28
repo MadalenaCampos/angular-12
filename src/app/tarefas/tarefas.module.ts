@@ -19,7 +19,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
@@ -47,6 +47,6 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     NzAlertModule,
     NzPopconfirmModule,
   ],
-  providers: [TarefaService],
+  providers: [TarefaService, NzMessageService],
 })
 export class TarefasModule {}
